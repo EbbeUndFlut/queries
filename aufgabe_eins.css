@@ -1,0 +1,94 @@
+main{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:5px;
+}
+
+img{
+    width:100%;
+   
+}
+
+/* die breite bezieht sich auf den viewport */
+@media(min-width:600px){
+    main{
+        grid-template-columns: 1fr 1fr;
+        
+    }
+}
+
+@media (min-width:1000px){
+    main{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+
+@media screen and (orientation: landscape){
+    main{
+        grid-template-columns: repeat(4,1fr);
+    }
+    
+}
+
+.layout{
+    display:grid;
+    grid-template-columns: 1fr 280px;
+    gap:1.5rem;
+    align-items: start;
+}
+
+.bereich{
+    background: rosybrown;
+    border-radius: 12px;
+}
+
+.karte-wrapper{
+    container-type: inline-size;
+    container-name: klaus;
+}
+
+.karte{
+    display:grid;
+    gap:0.75rem;
+    border:1px solid #e4e7eb;
+    border-radius:10px;
+    padding:0.75rem;
+}
+.karte-bild{
+    border-radius:8px;
+    background: linear-gradient(135deg,#6366f1,#ec4899);
+    height:90px;
+}
+.karte-titel{
+    margin:0;
+    font-size: 1rem;
+}
+
+.karte-text{
+    margin:0;
+    font-size:0.9rem;
+    color:#52606d;
+}
+.karte-button{
+    justify-self:center;
+    padding:.4rem .9rem;
+    border:0;
+    border-radius:6px;
+    background: #4f46e5;
+    color:#fff;
+    cursor: pointer;
+}
+
+/* die breite bezieht sich auf den angegebenen container NICHT auf den viewport vom dokument */
+@container klaus (min-width:400px){
+    .karte{
+        grid-template-columns: 180px 1fr;
+        align-items:center;
+    }
+}
+
+@container klaus (min-width:600px){
+    .karte{
+        grid-template-columns: 260px 1fr;
+    }
+}
